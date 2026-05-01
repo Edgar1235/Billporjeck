@@ -1,0 +1,622 @@
+/* --- ОНОВЛЕНИЙ БЛОК CSS ДЛЯ МЕНЮ --- */
+
+header {
+    display: flex;
+    width: 100%;
+    /* Прибираємо колір фону звідси, щоб його не було видно за рамкою меню */
+    background-color: transparent; 
+    /* Додаємо фіксоване позиціонування для хедеру, щоб він залишався зверху */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Щоб меню було поверх іншого контенту */
+}
+
+.menu {
+    display: flex;
+    /* Відступи всередині зеленої рамки */
+    padding: 10px 30px; 
+    align-items: center;
+    /* Відступ між кнопками */
+    gap: 20px; 
+    
+    /* Загальна зелена рамка */
+    background-color:orange; 
+    
+    /* Розтягуємо меню на всю ширину екрану */
+    width: 100%; 
+    box-sizing: border-box; 
+
+    /* Розташування кнопок:
+       flex-end - притиснути до правого краю
+       center   - по центру (як на 2-му фото)
+       flex-start - притиснути до лівого краю
+    */
+    justify-content: flex-end; 
+}
+
+.menu-elemens {
+    color: red;
+    /* Прибираємо фон і рамку з самих кнопок */
+    background: transparent; 
+    border: none; 
+    
+    font-family: Inter, sans-serif;
+    font-size: 20px; /* Зменшимо трохи розмір шрифту для кращого вигляду */
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+    
+    /* Налаштування для тексту */
+    line-height: 1.2; 
+    padding: 10px 15px; /* Відступи всередині кнопки для зручності натискання */
+    border-radius: 5px; /* Можна додати невелике закруглення для ховеру */
+
+    /* Плавний перехід для ефектів */
+    transition: all 0.3s ease; 
+}
+
+/* Ефекти при наведенні */
+.menu-elemens:hover {
+    background-color: rgba(255, 255, 255, 0.2); 
+    box-shadow: 2px 2px 5px 2px yellow;
+    transform: scale(1.1); 
+    transition-duration: .2s;
+    transition: tranform 0.5s linear,box-shadow 0.5s linear;
+}
+
+/* Ефект при натисканні */
+.menu-elemens:active {
+    transform: scale(0.95);
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* --- ВАШ ОРИГІНАЛЬНИЙ CSS (без змін меню) --- */
+
+body {
+    background-image: url(https://cdn.nur.kz/images/1200x675/888b7f9a24e1e73c.jpeg?version=2);
+    background-size: cover;        
+    background-attachment: fixed;  
+    background-position: center;   
+    margin: 0;
+    /* Додамо відступ зверху, щоб контент не перекривався фіксованим меню */
+    padding-top: 80px; 
+}
+
+.container {
+    color: ghostwhite;
+}
+
+.bill {
+    background-color: dimgrey;
+    padding: 20px; /* Додамо відступи всередину блоку */
+}
+
+.osoba {
+    display: flex; /* Змінимо display на flex для кращого розташування */
+    justify-content: space-around; /* Розподілимо блоки рівномірно */
+    margin-top: 20px;
+}
+
+.van {
+    background-color: aquamarine;
+    margin: 10px;
+    padding: 15px; /* Відступи всередині */
+    color: darkgreen;
+    border-radius: 8px; /* Заокруглені кути */
+    flex: 1; /* Рівномірна ширина */
+}
+
+.tu {
+    background-color: blue;
+    margin: 10px;
+    padding: 15px; /* Відступи всередині */
+    border-radius: 8px; /* Заокруглені кути */
+    flex: 1; /* Рівномірна ширина */
+}
+.top-ter {
+    background-color: rgba(0, 0, 0, 0.7); /* Темний напівпрозорий фон, щоб текст читався */
+    border: 2px solid chartreuse;        /* Зелена рамка */
+    margin: 20px auto;                  /* Відступи між рамками */
+    padding: 20px;                      /* Відступи тексту від рамки */
+    border-radius: 15px;                /* Закруглені кути */
+    max-width: 800px;                   /* Обмежуємо ширину, щоб не розтягувалось на весь екран */
+    color: chartreuse;                  /* Колір тексту */
+}
+
+h1 {
+    font-size: 24px;
+    margin-top: 0;                      /* Прибираємо зайвий відступ зверху у заголовка */
+}
+.fakt{
+   background-color: rgba(0, 0, 0, 0.7); /* Темний напівпрозорий фон, щоб текст читався */
+    border: 2px solid #FF5F1F;        /* Зелена рамка */
+    margin: 20px auto;                  /* Відступи між рамками */
+    padding: 20px;                      /* Відступи тексту від рамки */
+    border-radius: 15px;                /* Закруглені кути */
+    max-width: 800px;                   /* Обмежуємо ширину, щоб не розтягувалось на весь екран */
+    color:#FF5F1F;     
+}
+/* --- СТИЛІ ЧАТУ БІЛЛА ШИФРА --- */
+
+/* Контейнер для всього чату */
+#bill-chat-container {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 2000; /* Щоб було поверх меню і контенту */
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Кнопка-око (трикутник) */
+#bill-eye-trigger {
+    width: 60px;
+    height: 60px;
+    background: #ffd700; /* Золотий */
+    border: 3px solid #000;
+    border-radius: 50% 50% 10% 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#bill-eye-trigger:hover {
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: 0 0 25px #ffd700;
+}
+
+.pupil {
+    width: 10px;
+    height: 25px;
+    background: black;
+    border-radius: 50%;
+}
+
+/* Вікно чату */
+#chat-window {
+    display: none; /* Сховано за замовчуванням */
+    width: 300px;
+    background-color: #1a110a; /* Дуже темний коричневий */
+    border: 2px solid #ffd700;
+    border-radius: 12px;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.9);
+}
+
+/* Клас для відображення вікна через JS */
+#chat-window.active {
+    display: block;
+    animation: fadeIn 0.4s ease;
+}
+
+.chat-header {
+    color: #ffd700;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 1px dashed #ffd700;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+/* Область повідомлень */
+#bill-messages {
+    height: 220px;
+    overflow-y: auto;
+    padding: 5px;
+    scrollbar-width: thin;
+    scrollbar-color: #ffd700 #1a110a;
+}
+
+.bill-txt {
+    color: #ffd700;
+    margin: 8px 0;
+    line-height: 1.4;
+}
+
+.user-txt {
+    color: #ffffff;
+    text-align: right;
+    margin: 8px 0;
+    font-size: 13px;
+    background: rgba(255, 215, 0, 0.1);
+    padding: 4px;
+    border-radius: 5px;
+}
+
+/* Поле вводу */
+.chat-input-group {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+#user-input {
+    flex: 1;
+    background: #000;
+    border: 1px solid #ffd700;
+    color: #ffd700;
+    padding: 8px;
+    outline: none;
+    font-size: 13px;
+}
+
+#send-btn {
+    background: #ffd700;
+    border: none;
+    padding: 0 15px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.2s;
+}
+
+#send-btn:hover {
+    background: #fff;
+}
+
+/* Анімація появи */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* --- ГОЛОВНИЙ КОНТЕЙНЕР-СІТКА --- */
+.cards-container {
+    display: grid;
+    /* minmax не дає картам стискатися менше 250px і розширюватися більше 300px */
+    grid-template-columns: repeat(3, minmax(250px, 300px)); 
+    grid-template-rows: repeat(2, auto);
+    gap: 30px; 
+    justify-content: center; /* Центрує всю сітку на екрані */
+    align-items: center;
+    max-width: 1200px;
+    margin: 100px auto; /* Відступ від меню */
+    padding: 20px;
+}
+
+/* --- ЗАГАЛЬНА КАРТКА ПЕРСОНАЖА --- */
+.viki-card.trading-card {
+    background: linear-gradient(145deg, #1a1a1a, #2c1e14);
+    border: 4px solid #ffd700;
+    width: 100%; /* Ширина тепер контролюється сіткою */
+    height: 480px;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    transition: 0.3s ease;
+    font-family: 'Courier New', monospace;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+/* Ховер для всіх, крім Білла */
+.viki-card.trading-card:not(.bill-card):hover {
+    transform: scale(1.05) rotate(1deg);
+    box-shadow: 0 0 30px #ffd700;
+    border-color: #fff;
+}
+
+/* --- РОЗСТАВЛЯЄМО ПЕРСОНАЖІВ ПО СІТЦІ --- */
+.viki-card:nth-child(1) { grid-column: 1; grid-row: 1; } /* Зус */
+.viki-card:nth-child(2) { grid-column: 2; grid-row: 1; } /* Діппер */
+.viki-card:nth-child(3) { grid-column: 3; grid-row: 1; } /* Мейбл (виправлено дужку) */
+.viki-card:nth-child(5) { grid-column: 1; grid-row: 2; } /* Форд */
+.viki-card:nth-child(6) { grid-column: 3; grid-row: 2; } /* Стенлі */
+
+/* --- КАРТА БІЛЛА (Статичний стан) --- */
+.bill-card {
+    grid-column: 2; 
+    grid-row: 2;
+    z-index: 10;
+    margin-top: 40px !important;
+    
+    /* Тут ми кажемо, як він виглядає зазвичай */
+    transform: scale(1.2) ; 
+    
+    border: 6px solid #ff0000 !important;
+    background: linear-gradient(135deg, #1a1a00 0%, #000000 100%) !important;
+    box-shadow: 0 0 50px rgba(255, 215, 0, 0.9) !important;
+    
+    /* transition має бути коротким, щоб не заважати анімації */
+    transition: transform 0.1s ease-in-out !important;
+}
+
+/* --- ХОВЕР БІЛЛА (Магія тут) --- */
+/* --- ХОВЕР БІЛЛА (Тепер плавно) --- */
+.cards-container .bill-card:hover {
+    /* Змінив 0.1s на 0.6s — тепер він рухається повільніше */
+    animation: bill-shake 0.6s infinite ease-in-out !important; 
+    cursor: pointer;
+    z-index: 20;
+}
+
+/* --- ОНОВЛЕНА ПЛАВНА АНІМАЦІЯ --- */
+@keyframes bill-shake {
+    0%   { transform: scale(1.25) translate(0, 0) rotate(0deg); }
+    20%  { transform: scale(1.26) translate(5px, -3px) rotate(1.5deg); }
+    40%  { transform: scale(1.24) translate(-5px, 3px) rotate(-1.5deg); }
+    60%  { transform: scale(1.26) translate(4px, 4px) rotate(1deg); }
+    80%  { transform: scale(1.24) translate(-4px, -2px) rotate(-1deg); }
+    100% { transform: scale(1.25) translate(0, 0) rotate(0deg); }
+}
+
+/* ДЕТАЛІ КАРТОК */
+.card-stats {
+    background: #ffd700;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.card-img-window {
+    width: 100%;
+    height: 180px;
+    border: 2px solid #ffd700;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #000;
+}
+
+.bill-glow {
+    border: 3px solid #ff0000 !important;
+    box-shadow: inset 0 0 20px #ff0000;
+}
+
+.card-img-window img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.viki-card h1 {
+    font-size: 18px;
+    color: #ffd700;
+    margin: 15px 0 10px;
+    text-transform: uppercase;
+}
+
+.glitch-text {
+    color: #fffb00 !important;
+    text-shadow: 3px 3px #ff0000, -3px -3px #00ffff;
+}
+
+.card-description {
+    font-size: 13px;
+    color: #f0e68c;
+    font-style: italic;
+    line-height: 1.4;
+    padding: 0 5px;
+}
+
+.card-footer {
+    margin-top: auto;
+    font-size: 24px;
+    color: #ffd700;
+}
+/* --- СТАНДАРТНА ПЛАШКА (Для всіх, крім Білла) --- */
+.viki-card.trading-card:not(.bill-card) .card-stats {
+    background: #ffd700;
+    color: black;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 12px;
+    
+    /* Дозволяємо рядку бути довгим, але не розпирати картку */
+    width: 95%; 
+    display: flex;
+    justify-content: space-around; 
+    align-items: center;
+    box-sizing: border-box;
+    white-space: nowrap !important;
+}
+
+/* --- ОСОБЛИВА ПЛАШКА БІЛЛА (Глючна і довга) --- */
+/* --- ФІКСОВАНИЙ ХАОС БІЛЛА --- */
+.bill-card .card-stats {
+    background: #ff0000 !important;
+    color: white !important;
+    font-size: 16px !important; /* Збільшуємо символи, щоб їх було видно */
+    font-weight: bold;
+    padding: 5px 0 !important;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    
+    /* Розтягуємо плашку */
+    width: 106% !important; 
+    position: relative;
+    left: -3%; /* Центруємо через збільшену ширину */
+    
+    /* ВИРІВНЮВАННЯ СИМВОЛІВ */
+    display: flex !important; /* Міняємо inline-block на flex */
+    justify-content: space-around; /* Розштовхує символи по краях */
+    align-items: center;
+    
+    /* ЕФЕКТИ */
+    transform: rotate(-1deg) skewX(-15deg) !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
+    letter-spacing: 2px; /* Додаємо простір між символами */
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.9) !important;
+}
+/* =========================================
+    ФІНАЛЬНИЙ КОД ЩОДЕННИКІВ ГРАВІТІ ФОЛЗ 
+   ========================================= */
+
+/* 1. Головний контейнер */
+.journals-container {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 80px !important;
+    padding: 100px 0;
+    perspective: 2000px !important; 
+    transform-style: preserve-3d !important;
+}
+
+/* 2. Коробка щоденника */
+.journal-box {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 260px;
+    transform-style: preserve-3d !important;
+}
+
+/* 3. Сама книга */
+.book {
+    width: 260px;
+    height: 360px;
+    position: relative;
+    transform-style: preserve-3d !important;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    background: transparent !important; /* Робимо основу прозорою, щоб не було білих країв */
+}
+
+.page {
+    width: 96%;
+    height: 96%;
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    z-index: 1;
+    /* Міняємо фон на більш теплий і додаємо текстуру старого паперу */
+    background: #e1cf9d url('https://www.transparenttextures.com/patterns/old-map.png'); 
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 2px 10px 10px 2px;
+    box-shadow: inset 10px 0 20px rgba(0,0,0,0.2);
+    
+    color: #3b2b1a; /* Темно-коричневе чорнило */
+    font-family: 'Amatic SC', cursive, serif; /* Рукописний шрифт */
+    overflow-y: auto;
+    display: block;
+}
+
+/* Налаштування для малюнків, як на фото з гномом */
+.page img {
+    float: right; /* Картинка буде справа, а текст зліва */
+    width: 130px; 
+    margin-left: 15px;
+    filter: sepia(0.3) contrast(1.1); /* Ефект старого друку */
+}
+
+/* Червоні заголовки та примітки */
+.page h2 {
+    color: #8b0000;
+    font-size: 28px;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+}
+
+.page .danger-note {
+    color: #8b0000;
+    font-weight: bold;
+    border: 2px solid #8b0000;
+    display: inline-block;
+    padding: 2px 5px;
+    transform: rotate(-3deg); /* Ефект штампу */
+    margin: 10px 0;
+}
+/* 5. Обкладинка (ФІНАЛЬНЕ ВИПРАВЛЕННЯ) */
+.cover {
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute;
+    z-index: 5 !important;
+    transform-origin: left !important;
+    transition: transform 0.8s ease-in-out;
+    backface-visibility: hidden;
+    border-radius: 5px 15px 15px 5px;
+    border: none !important;
+    
+    /* Тільки ці параметри для фону */
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: cover !important; /* Рятує пропорції */
+}
+
+/* 6. Ховер ефекти */
+.journal-box:hover .cover {
+    transform: rotateY(-145deg) !important;
+}
+
+.journal-box:hover .book {
+    transform: rotateY(10deg) rotateX(5deg);
+}
+
+/* 7. Дизайн обкладинок (ВИПРАВЛЕНО) */
+.shadow-1 { 
+    background-color: #8b0000 !important; /* Наш колір */
+    background-image: url('img/щоденик 1.webp') !important;
+    background-size: cover !important; /* Розтягуємо */
+    background-position: center !important;
+    border: none !important;
+    box-shadow: 10px 10px 25px rgba(0,0,0,0.5); 
+}
+
+.shadow-2 { 
+    background-color: #8b0000 !important;
+    background-image: url('img/щоденик 2.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    border: none !important;
+    box-shadow: 10px 10px 25px rgba(0,0,0,0.5);
+}
+
+.shadow-3 { 
+    background-color: #8b0000 !important; /* ПОЧИНИЛИ КОЛІР №3 */
+    background-image: url('img/щоденик 3.png') !important;
+    background-size: cover !important; /* ПОЧИНИЛИ РОЗМІР №3 */
+    background-position: center !important;
+    border: none !important;
+    box-shadow: 10px 10px 25px rgba(0,0,0,0.5);
+}
+
+.journal-title {
+    background: linear-gradient(145deg, #2a2a2a, #000000); /* Градієнт для об'єму */
+    margin-top: 25px;
+    padding: 10px 20px;
+    color: #ffd700;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    
+    /* Створення гарної рамки */
+    border: 2px solid #ffd700; 
+    border-radius: 5px;
+    display: inline-block; /* Щоб рамка була по розміру тексту */
+    
+    /* Ефект заклепок по кутах */
+    box-shadow: 
+        inset 0 0 10px rgba(255, 215, 0, 0.3), /* Внутрішнє світіння */
+        5px 5px 15px rgba(0, 0, 0, 0.5); /* Зовнішня тінь */
+        
+    position: relative;
+}
+
+/* Додаємо декоративні "гвинти" по боках */
+.journal-title::before, .journal-title::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #555;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 1px 1px 2px #000;
+}
+
+.journal-title::before { left: 5px; }
+.journal-title::after { right: 5px; }

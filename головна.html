@@ -1,40 +1,76 @@
-<html>
-    <head>
-         <meta charset="UTF-8">
-         <title>Білл Шифр</title>
-         <link rel="icon" type="image/webp" href="img/Bill_icon.webp">
-
-    </head>
-    <body>
-        <div class="container">
-            <h1>Всевидюче око:Білл Шифр (Bill Cipher)</h1>
-        <p>Білл Шифр — це головний антагоніст серіалу "Гравіті Фолз". Він є демоном розуму, який прийшов з Виміру Кошмарів, щоб посіяти хаос у нашому світі. </p>
-         <p>
-        Він <b>дуже могутній</b> і водночас <i>неймовірно божевільний</i>. <br>
-        <u>Запам'ятайте:</u> ніколи не тисніть йому руку, навіть якщо вона палає синім вогнем! <br>
-        <s>Його неможливо зупинити</s> — хоча родина Пайнс довів зворотне.
-    </p>
-    <br>
-     <hr>
- <h3>Галерея демона:</h3>
-   <img src="img/cosmobil.jpg" alt="Маленький Білл" width="100">
-    <img src="img/bill.jpg" alt="Середній Білл" width="250">
-    <img src="img/redbill.webp" alt="Великий Білл" width="400">
-    <hr>
-     <h3>Що він любить:</h3>
-     <ul>
-          <li>Укладати вигідні (для себе) угоди</li>
-        <li>Створювати вечірки хаосу</li>
-        <li>Дивне почуття гумору</li>
-     </ul>
-     <h3>Етапи його плану:</h3>
-    <ol>
-        <li>Проникнути в розум Стенфорда</li>
-        <li>Відкрити міжвимірний розлом</li>
-        <li>Влаштувати Дивногедон</li>
-    </ol>
-
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Білл Шифр</title>
+    <link rel="icon" type="image/webp" href="img/Bill_icon.webp">
+    <link rel="stylesheet" href="Bill.css">
+    <style>
+        /* Додаємо плавну прокрутку прямо тут, щоб кнопка працювала красиво */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <a href="./головна.html" class="menu-elemens">ГОЛОВНА </a>
+            <a href="./theory.html" class="menu-elemens">ТЕОРІЇ</a>
+            <a href="./fakt.html" class="menu-elemens">ФАКТИ</a>
+            <a href="./Viki.html" class="menu-elemens">ВІКІ</a>
+            <a href="./щоденки.html" class="menu-elemens">ЩОДЕНКИ</a>
+            <a href="#ai-chat" class="menu-elemens" style="color: #ffd700; border: 1px solid #ffd700;">👁️ ЧАТ З БІЛЛОМ</a>
+            <div id="bill-clock" class="menu-elemens">00:00:00</div>
         </div>
-        
-    </body>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="bill">
+                <h1>Всевидюче око: Білл Шифр (Bill Cipher)</h1>
+                <p>Білл Шифр — це головний антагоніст серіалу "Гравіті Фолз". Він є демоном розуму, який прийшов з Виміру Кошмарів, щоб посіяти хаос у нашому світі. </p>
+                <p>
+                    Він <b>дуже могутній</b> і водночас <i>неймовірно божевільний</i>. <br>
+                    <u>Запам'ятайте:</u> ніколи не тисніть йому руку, навіть якщо вона палає синім вогнем! <br>
+                    <s>Його неможливо зупинити</s> — хоча родина Пайнс довів зворотне.
+                </p>
+            </div>
+            <br>
+            <hr>
+            
+            <h3>Галерея демона:</h3>
+            <img src="img/cosmobil.jpg" alt="Маленький Білл" width="100">
+            <img src="img/bill.jpg" alt="Середній Білл" width="250">
+            <img src="img/redbill.webp" alt="Великий Білл" width="400">
+            <hr>
+
+            <div id="ai-chat" class="ai-box" style="margin: 20px 0; border: 3px solid #ffd700; border-radius: 15px; overflow: hidden; background: #000;">
+                <h3 style="text-align: center; background: #ffd700; color: #000; margin: 0; padding: 10px;">УКЛАСТИ УГОДУ З БІЛЛОМ</h3>
+                <iframe src="http://localhost:8501" width="100%" height="500px" style="border: none;"></iframe>
+            </div>
+
+            <div class="osoba">
+                <div class="van">
+                    <h3>Що він любить:</h3>
+                    <ul>
+                        <li>Укладати вигідні (для себе) угоди</li>
+                        <li>Створювати вечірки хаосу</li>
+                        <li>Дивне почуття гумору</li>
+                    </ul>
+                </div>
+                <div class="tu">
+                    <h3>Етапи його плану:</h3>
+                    <ol>
+                        <li>Проникнути в розум Стенфорда</li>
+                        <li>Відкрити міжвимірний розлом</li>
+                        <li>Влаштувати Дивногедон</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="bill.js"></script>
+</body>
 </html>
